@@ -1,178 +1,272 @@
 # Swiggy Sales Analysis – SQL Server Data Warehouse Project
-End-to-End SQL Data Cleaning, Star Schema Design &amp; KPI Analysis on Swiggy Sales Dataset
 
-📌 Project Overview
+Welcome to the Swiggy Sales Analysis Project repository! 🚀
+This project demonstrates an end-to-end SQL-based analytical solution, starting from raw transactional food delivery data to a structured Star Schema model with actionable business insights.
 
-This project focuses on transforming raw Swiggy food delivery data into a structured analytical model using SQL Server. The objective was to clean, validate, model, and analyze transactional data to generate actionable business insights.
+Designed as a portfolio project showcasing real-world data cleaning, dimensional modeling, and advanced SQL analytics.
+---
 
-The project simulates a real-world data warehouse implementation with star schema design and business KPI reporting.
+## 🏗️ Data Architecture
 
-🧹 Data Cleaning & Validation
+This project follows a structured analytical modeling approach inspired by modern data warehousing principles.
+---
 
-Performed comprehensive data quality checks on the raw dataset:
+🔹 Raw Layer
 
-Null value detection across business-critical columns
+Source: Swiggy food delivery dataset (CSV format)
 
-Blank / empty string validation
+Imported into SQL Server
 
-Duplicate record detection using GROUP BY
+Initial validation and profiling performed
 
-Duplicate removal using ROW_NUMBER() window function
+🔹 Cleaned Layer
 
-Data type validation and numeric conversions for analytical accuracy
+Null value validation
 
-This ensured reliable and consistent data before dimensional modeling.
+Blank field detection
 
-🏗 Dimensional Modeling – Star Schema Design
+Duplicate identification using GROUP BY
 
-Designed and implemented a Star Schema for optimized analytical querying.
+Duplicate removal using ROW_NUMBER()
 
+Data type standardization using CONVERT and CAST
+
+🔹 Analytical Layer (Star Schema)
+
+Data was modeled into a Fact-Dimension architecture to support scalable analytical queries.
+
+---
+
+📖 Project Overview
+
+This project involves:
+
+- Data Cleaning & Validation
+
+- Star Schema Design
+
+- Fact & Dimension Table Creation
+
+- KPI Development
+
+- Advanced SQL-Based Business Analysis
+
+- Insight Generation for Decision-Making
+
+---
+
+🎯 Project Objective
+
+Develop a structured analytical model using SQL Server to:
+
+- Understand customer ordering behavior
+
+- Analyze food & cuisine performance
+
+- Identify revenue-driving cities
+
+- Study pricing patterns
+
+- Track rating distribution
+
+- Examine time-based trends
+
+---
+
+## 🏗 Data Modeling – Star Schema
 📦 Dimension Tables
 
-dim_date (Year, Month, Month_Name, Quarter, Weekday)
+- dim_date
 
-dim_location (State, City, Location)
+- Year
 
-dim_restaurant
+- Month
 
-dim_category
+- Month_Name
 
-dim_dish
+- Weekday
 
-📊 Fact Table
+- Quarter
 
-fact_swiggy_orders
+- dim_location
 
-Price_INR
+- State
 
-Rating
+- City
 
-Rating_Count
+- Location
 
-Foreign Keys to all dimensions
+- dim_restaurant
 
-All foreign keys were resolved during fact loading to ensure referential integrity.
+- dim_category
 
-This structure improves query performance and aligns with industry-standard BI practices.
+- dim_dish
 
-📊 KPI Development & Business Analysis
+---
+
+## 📊 Fact Table
+
+🔹fact_swiggy_orders
+
+Includes:
+
+- Price_INR
+
+- Rating
+
+- Rating_Count
+
+Foreign Keys to all dimension tables
+
+This design improves:
+
+- Query performance
+
+- Analytical clarity
+
+- Scalability
+
+- BI compatibility
+
+---
+
+## 📊 KPI Development & Business Analytics
 🔹 Core KPIs
 
-Total Orders
+- Total Orders
 
-Total Revenue
+- Total Revenue
 
-Average Dish Price (Formatted in INR)
+- Average Dish Price (INR formatted)
 
-Average Rating
+- Average Rating
 
-📈 Deep-Dive Analysis
-📅 Time-Based Analysis
+---
 
-Monthly order trends
+## 📅 Time-Based Analysis
 
-Year-wise growth
+- Monthly Order Trends
 
-Day-of-week ordering patterns (Mon–Sun with correct weekday ordering)
+- Year-Wise Growth
+
+---
+
+## Day-of-Week Patterns (Mon–Sun with correct ordering logic)
 
 📍 Location-Based Analysis
 
-Top 10 cities by order volume
+- Top 10 Cities by Order Volume
 
-Bottom 10 cities by order volume
+- Bottom 10 Cities by Order Volume
 
-Top 10 cities by revenue contribution
+- Top 10 Cities by Revenue Contribution
 
-🍽 Food Performance Analysis
+---
 
-Top 10 restaurants by total orders
+## 🍽 Food & Cuisine Performance
 
-Top categories by order volume
+- Top 10 Restaurants by Orders
 
-Top 20 most ordered dishes
+- Top Categories by Order Volume
 
-Cuisine performance (Orders + Average Rating)
+- Top 20 Most Ordered Dishes
 
-💰 Customer Spending Insights
+- Cuisine Performance (Orders + Avg Rating)
 
-Price bucket segmentation:
+---
 
-Under 100
+## 💰 Customer Spending Insights
 
-100–199
+Price Segmentation using CASE logic:
 
-200–299
+- Under 100
 
-300–499
+- 100–199
 
-500+
+- 200–299
 
-Analyzed order distribution across spending ranges to understand pricing behavior.
+- 300–499
 
-⭐ Ratings Analysis
+- 500+
 
-Distribution of ratings (1–5)
+Analyzed order distribution across price buckets to understand pricing behavior and revenue concentration.
 
-Average rating across platform
+---
 
-Cuisine-wise rating performance
+## ⭐ Ratings Analysis
 
-🛠 SQL Concepts Applied
+- Rating distribution (1–5 scale)
 
-Window Functions (ROW_NUMBER())
+- Average Rating
 
-CASE Expressions for segmentation
+- Category-wise rating comparison
 
-Aggregations (SUM, COUNT, AVG)
+---
 
-Data Type Conversion (CONVERT, CAST)
+## 🧠 SQL Concepts Applied
 
-Formatting & Precision Control (ROUND, FORMAT)
+- Window Functions (ROW_NUMBER)
 
-Star Schema Implementation
+- CASE Expressions (Segmentation)
 
-Multi-table Joins for analytical queries
+- Aggregations (SUM, COUNT, AVG)
 
-🎯 Key Business Insights
+- Numeric Formatting (ROUND, FORMAT)
 
-Mid-range price bucket (100–299 INR) drives the majority of orders
+- Multi-table Joins
 
-Certain cities contribute disproportionately to revenue
+- Star Schema Implementation
 
-High-performing cuisines combine high order volume with strong ratings
+- Data Type Conversion (CONVERT, CAST)
 
-Weekend ordering patterns show visible spikes compared to weekdays
+- Date Functions (DATENAME, DATEPART)
 
-📌 Project Outcome
+---
 
-Successfully converted raw transactional data into a structured analytical warehouse, enabling scalable business reporting and performance tracking.
 
-This project demonstrates practical skills in:
+##📂 Repository Structure
+```
+Swiggy-Sales-Analysis-SQL/
+│
+├── 01_Data_Cleaning.sql
+├── 02_Dimension_Tables.sql
+├── 03_Fact_Table_Load.sql
+├── 04_KPI_Analysis.sql
+├── docs/
+│ └── ERD_Diagram.png
+├── README.md
+└── .gitignore
+```
+## 🚀 Business Insights Derived
 
-Data Cleaning
+- Date Functions (DATENAME, DATEPART)
 
-Dimensional Modeling
+- Mid-price range (100–299 INR) dominates order volume
 
-SQL Optimization
+- Certain cities significantly outperform others in revenue
 
-Business Intelligence Thinking
+- High-performing cuisines balance strong ratings with large order counts
 
-💻 Tools Used
+- Weekend ordering shows noticeable spikes
 
-SQL Server
+- Premium price segments contribute smaller but higher-value orders
 
-SSMS (SQL Server Management Studio)
+---
 
-🚀 Why This Project Matters
+## 💻 Tools Used
 
-This project replicates a real-world data analyst workflow:
+- SQL Server
 
-Clean raw data
+- SSMS (SQL Server Management Studio)
 
-Design data model
+- Build fact-dimension architecture
 
-Build fact-dimension architecture
+- Generate business KPIs
 
-Generate business KPIs
+- Extract insights for decision-making
 
-Extract insights for decision-making
+---
+
+## About ME 
+
+Hi there! I'm **Karan More** an aspiring Data Analyst & Data Engineer with a strong foundation in Python, SQL, Power BI, and ETL workflows.
