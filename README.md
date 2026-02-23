@@ -1,14 +1,16 @@
 # Swiggy Sales Analysis – SQL Server Data Warehouse Project
 
 Welcome to the Swiggy Sales Analysis Project repository! 🚀
-This project demonstrates an end-to-end SQL-based analytical solution, starting from raw transactional food delivery data to a structured Star Schema model with actionable business insights.
+This project demonstrates an end-to-end SQL-based analytical solution, starting from raw transactional food delivery data to a structured Star Schema model with actionable business insights. 
 
 Designed as a portfolio project showcasing real-world data cleaning, dimensional modeling, and advanced SQL analytics.
+
 ---
 
 ## 🏗️ Data Architecture
 
 This project follows a structured analytical modeling approach inspired by modern data warehousing principles.
+
 ---
 
 🔹 Raw Layer
